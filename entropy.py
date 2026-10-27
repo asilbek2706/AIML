@@ -1,7 +1,6 @@
 import pandas as pd
 import math
 
-
 def entropy(column):
     values, counts = column.value_counts().index, column.value_counts().values
     total = sum(counts)
@@ -11,8 +10,8 @@ def entropy(column):
     ent -= p * math.log2(p)
     return ent
 
-
 def information_gain(df, attribute, target):
+    global subset
     total_entropy = entropy(df[target])
     values = df[attribute].unique()
     weighted_entropy = 0
@@ -23,7 +22,6 @@ def information_gain(df, attribute, target):
     weighted_entropy += weight * entropy(subset[target])
 
     return total_entropy - weighted_entropy
-
 
 def id3(df, target, attributes):
     # Base cases
@@ -48,7 +46,7 @@ def id3(df, target, attributes):
             tree[best_attr][val] = id3(subset, target, new_attrs)
 
             return tree
-
+    return None
 
 data = {
     "Outlook": ["Sunny", "Sunny", "Overcast", "Rain", "Rain"],
