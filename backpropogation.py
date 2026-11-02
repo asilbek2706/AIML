@@ -91,9 +91,9 @@ X_train, X_test, y_train, y_test = train_test_split(
 # Train the Neural Network
 # ----------------------------
 nn = NeuralNetwork(
-    input_nodes=4,  # iris features
-    hidden_nodes=6,  # arbitrary choice
-    output_nodes=3,  # 3 classes
+    input_nodes=4,
+    hidden_nodes=6,
+    output_nodes=3,
     learning_rate=0.1
 )
 
