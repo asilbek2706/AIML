@@ -7,6 +7,7 @@ target = np.array(data.iloc[:, -1])
 
 
 def learn(concepts, target):
+    global i, x
     specific_h = concepts[0].copy()
     print("initialization of specific_h \n", specific_h)
     general_h = [["?" for i in range(len(specific_h))] for i in range(len(specific_h))]
