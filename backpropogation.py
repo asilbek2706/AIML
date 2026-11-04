@@ -97,7 +97,7 @@ nn = NeuralNetwork(
     learning_rate=0.1
 )
 
-nn.train(X_train, y_train, epochs=2000)
+nn.train(X_train, y_train, epochs=3000)
 
 # ----------------------------
 # Test the Neural Network
